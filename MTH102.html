@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTH102</title>
+
+    <script>
+        function basicCalculation(){
+            var n1 = parseFloat (document.getElementById("num1").value);
+            var n2 = parseFloat (document.getElementById("num2").value);
+            var res;
+            var operation = document.getElementById("operator").value
+
+            if(operation ==="+"){
+              res = n1+n2;
+            }
+            if(operation ==="-"){
+              res = n1-n2;
+            }
+            if(operation ==="*"){
+              res = n1*n2;
+            }
+            if(operation ==="/"){
+              res = n1/n2;
+            }
+           document.getElementById("result").value = res.toFixed(2);
+
+        }
+    </script>
+    <style>
+        .calculator{
+            width: 250px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: cornflowerblue;
+            padding: 10px;
+            margin: auto;
+            padding-left: 40px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .calculator h4 {
+            text-align: center;
+           
+        }
+        .calculator input{
+            background-color: darkkhaki;
+        }
+        .calculator button{
+            background-color: rgb(133, 255, 160);
+        }
+        .calculator select{
+            background-color: rgb(226, 133, 153);
+        }
+    </style>
+    <style>
+        .tempCoversion{
+            width: 250px;
+            height: 280px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: cornflowerblue;
+            padding: 10px;
+            margin: auto;
+            padding-left: 40px;
+           }
+           .tempCoversion input{
+            background-color: darkkhaki;
+        }
+        .tempCoversion button{
+            background-color: rgb(133, 255, 160);
+        }
+    </style>
+    <script>
+      function area32(){
+          let B = parseFloat(document.getElementById("base").value);
+          let H = parseFloat(document.getElementById("hid").value);
+          let A = (1/2) * B * H ;
+          document.getElementById("area3").value = A.toFixed(2);
+      }
+    </script>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</head>
+<body style="background-color: rgb(163, 255, 163);">
+
+    <!-- basic calculation -->
+    <div class="calculator">
+    <h4>Basic Calculator</h4>
+    <label for="">Number1</label><br>
+    <input type="text" name="" id="num1"size="10">
+    <select name="" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <br>
+    <label for="">Number2</label><br>
+    <input type="text" name="" id="num2"size="10">
+    <br>
+    <label for="">Result</label>
+    <br>
+    <input type="text" name="" id="result"size="10">
+     <button onclick="basicCalculation()">Enter</button>
+    </div> <br> <br>
+
+    <div class="tempCoversion">
+        <h4>คำนวณหาพื้นที่รูปสามเหลี่ยม</h4>
+        <label for="">ความยาวฐาน</label><br>
+        <input type="text" name="" id="base" size="10"> <br> <br>
+        <label for="">ความสูง</label><br>
+        <input type="text" name="" id="hid" size="10"> <br><br>
+        <label for="">พื้นที่รูปสามเหลี่ยม</label><br>
+        <input type="text" name="" id="area3" size="10"> 
+        <button onclick="area32()">Area</button>
+        
+</div> <br> <br>
+<center>
+<img src="02 พื้นที่สามเหลี่ยมทั่วไป.jpg" width="400" height="250">
+</center>
+</body>
+</html>

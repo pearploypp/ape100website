@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APE122</title>
+    <script>
+        function speed(){
+            let d = parseFloat(document.getElementById("dia").value);
+            let n = parseFloat(document.getElementById("speedn").value);
+            let v = ( 3.14 * d * n ) / 1000;
+            document.getElementById("speedc").value = v.toFixed(2);
+        }
+        function speedofcut(){
+            let d = parseFloat(document.getElementById("dia").value);
+            let v = parseFloat(document.getElementById("speedc").value);
+            let n = ( 1000 * v ) / 3.14 * d;
+            document.getElementById("speedn").value = n.toFixed(2);
+        }
+        function Tablefeed(){
+            let Fz = parseFloat(document.getElementById("Fpert").value);
+            let Zn = parseFloat(document.getElementById("numoft").value);
+            let Vf = parseFloat(document.getElementById("Feedrate").value);
+            let n2 = ( Vf ) / ( Fz * Zn );
+            document.getElementById("speedofm").value = n2.toFixed(2);
+        }
+        function speedofmilling(){
+            let Fz = parseFloat(document.getElementById("Fpert").value);
+            let Zn = parseFloat(document.getElementById("numoft").value);
+            let n2 = parseFloat(document.getElementById("speedofm").value);
+            let Vf = ( Fz * Zn * n2 );
+            document.getElementById("Feedrate").value = Vf.toFixed(2);
+        }
+    </script>
+
+    <style>
+
+        .calculator{
+            width: 350px;
+            height: 300px;
+            border: 10px solid rgb(3, 65, 179);
+            border-radius: 10px;
+            background-color: rgb(243, 253, 105);
+            padding: auto;
+            margin: auto;
+        }
+        .calculator h3{
+            text-align: center;
+        }
+        .calculator input{
+            background-color: rgb(133, 255, 174);
+        }
+        .calculator button{
+            background-color: rgb(255, 54, 28);
+        }
+        .calculator2{
+            width: 350px;
+            height: 400px;
+            border: 10px solid rgb(3, 65, 179);
+            border-radius: 10px;
+            background-color: rgb(243, 253, 105);
+            padding: auto;
+            margin: auto;
+        }
+        .calculator2 h3{
+            text-align: center;
+        }
+        .calculator2 input{
+            background-color: rgb(133, 255, 174);
+        }
+        .calculator2 button{
+            background-color: rgb(255, 54, 28);
+        }
+    </style>
+</head>
+<body style="background-color: rgb(181, 240, 181);">
+
+<div class="calculator">
+    <h3> <u> คำนวณหาความเร็วตัด และ ความเร็วรอบ</u></h3>
+    <label for="">เส้นผ่านศูนย์กลางของชิ้งงาน (d)</label><br><br> 
+    <input type="text" name="" id="dia"size="10"> (เมตร)<br><br>
+    <label for="">ความเร็วรอบ (n)</label><br><br>
+    <input type="text" name="" id="speedn"size="10">
+    <button onclick="speed()">n</button> (รอบ/นาที)<br><br> 
+    <label for="">ความเร็วตัด (v)</label><br><br>
+    <input type="text" name="" id="speedc"size="10">
+    <button onclick="speedofcut()">v</button> (เมตร/นาที)
+</div> <br><br>
+<center>
+    <img src="รูปตัด.PNG" width="300px" height="250px">
+    <img src="สูตรตัด.PNG" width="400px" height="250px"><br>
+</center>
+<div class="calculator2">
+    <h3><u>คำนวณความเร็วฟีด และ ความเร็วรอบ</u></h3>
+    <label for="">Feed per tooth (Fz) </label> <br><br>
+    <input type="text" name="" id="Fpert" size="10"> (มิลลิเมตร/ฟัน) <br><br>
+    <label for="">จำนวนฟันของดอกกัด</label><br><br>
+    <input type="text" name="" id="numoft"size="10">(ฟัน) <br><br>
+    <label for="">ความเร็วฟีด(Vf)</label><br><br>
+    <input type="text" name="" id="Feedrate"size="10">
+    <button onclick="Tablefeed()">Vf</button>(มิลลิเมตร/นาที) <br><br>
+    <label for="">ความเร็วรอบ (n)</label> <br><br>
+    <input type="text" name="" id="speedofm"size="10">
+    <button onclick="speedofmilling()">n</button> (เมตร/นาที)
+</div> <br><br>
+<center>
+    <img src="รูปความเร็วฟีด.PNG" width="300px" height="250px">
+    <img src="สูตรหาความเร็วฟีด.PNG" width="400px" height="250px"><br>
+</center>
+</body>
+</html>

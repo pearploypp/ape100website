@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHY103</title>
+    <script>
+        function force1(){
+            let Q1 = parseFloat(document.getElementById("charge1").value);
+            let Q2 = parseFloat(document.getElementById("charge2").value);
+            let R = parseFloat(document.getElementById("distance").value);
+            let F = ( 9 * 10^9 * Q1 * Q2 ) / R^2 ;
+            document.getElementById("force").value = F.toFixed(2);
+
+        }
+    </script>
+
+    <style>
+        .calculator1{
+            width: 400px;
+            height: 450px;
+            border: 10px solid rgb(3, 65, 179);
+            border-radius: 10px;
+            background-color: rgb(243, 253, 105);
+            padding: auto;
+            margin: auto;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(135, 255, 56);">
+    <div class="calculator1">
+    <h1>คำนวณหาแรงระหว่างประจุ</h1>
+    <label for="">ค่าของประจุตัวที่ 1 (Q1)</label><br><br>
+    <input type="text" name="" id="charge1"size="10">(C) <br><br>
+    <label for="">ค่าของประจุตัวที่ 2 (Q2)</label><br><br>
+    <input type="text" name="" id="charge2"size="10">(C) <br><br>
+    <label for="">ระยะห่างระหว่างประจุ (R)</label><br><br>
+    <input type="text" name="" id="distance"size="10">(m) <br><br>
+    <label for="">แรงระหว่างประจุ (F)</label><br><br>
+    <input type="text" name="" id="force"size="10">
+    <button onclick="force1()">F</button> (์N) <br><br>
+
+</div>
+<center>
+<img src="แรงระหว่างประจุ.jpg" width="400px" height="250px"> 
+<img src="ประจุ.png" width="400px" height="250px"> 
+</center>
+</body>
+</html>
